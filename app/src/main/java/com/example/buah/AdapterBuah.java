@@ -14,13 +14,16 @@ public class AdapterBuah extends ArrayAdapter {
     private final String namabuah[];
     private final String ket_buah[];
     private final int gambar_buah[];
+    private final String hargabuah[];
     private final Activity activity;
 
-    public AdapterBuah(MainActivity activity,String[] namabuah, int[] gambar_buah,String[] ket_buah) {
+    //menampilkan harga buah
+    public AdapterBuah(MainActivity activity,String[] namabuah, int[] gambar_buah,String[] ket_buah,String[] hargabuah) {
         super(activity,R.layout.list_item,namabuah);
         this.namabuah = namabuah;
         this.ket_buah = ket_buah;
         this.gambar_buah = gambar_buah;
+        this.hargabuah = hargabuah;
         this.activity = activity;
     }
 
@@ -35,8 +38,11 @@ public class AdapterBuah extends ArrayAdapter {
         gambarnya=tampil.findViewById(R.id.gambar_buah);
         nama_buah=tampil.findViewById(R.id.nama_buah);
 
+
+
         gambarnya.setImageResource(gambar_buah[position]);
         nama_buah.setText(namabuah[position]);
+        
         return tampil;
     }
 }
